@@ -412,8 +412,10 @@ service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0
 on property:dev.bootcomplete=1
     exec /system/bin/wifimac
 
-# cpufreq interactive governor: timer 20ms, min sample 60ms, hispeed 600MHz at load 50%.
+on property:dev.bootcomplete=1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+<<<<<<< HEAD
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 600000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 50
@@ -424,6 +426,9 @@ on property:dev.bootcomplete=1
 
 # lower maximum frequency when screen is off
     write /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq 600000
+=======
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 20000
+>>>>>>> parent of d374fae... Add power hal. backported from p940
 
 service charger /charger
     class charger
