@@ -7,6 +7,7 @@ $(call inherit-product, device/common/gps/gps_eu.mk)
 DEVICE_PACKAGE_OVERLAYS += device/lge/p760/overlay
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
@@ -19,7 +20,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.u2:root/fstab.lgep760board
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf  \
     $(LOCAL_PATH)/configs/hostapd.conf:system/etc/wifi/softap/hostapd.conf \
     $(LOCAL_PATH)/configs/touch_dev.idc:system/usr/idc/touch_dev.idc \
     $(LOCAL_PATH)/configs/touch_dev.kl:system/usr/keylayout/touch_dev.kl \
@@ -48,6 +51,7 @@ PRODUCT_COPY_FILES += \
 
 # Permission files
 PRODUCT_COPY_FILES += \
+frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -87,46 +91,6 @@ PRODUCT_PACKAGES += \
     audio.primary.p760 \
     hwcomposer.p760
 
-PRODUCT_PACKAGES += \
-    OMXCore \
-    libOMX_Core \
-    libdomx \
-    libOMX.TI.DUCATI1.VIDEO.H264E \
-    libOMX.TI.DUCATI1.VIDEO.MPEG4E \
-    libOMX.TI.DUCATI1.VIDEO.CAMERA \
-    libOMX.TI.DUCATI1.MISC.SAMPLE \
-    libOMX.TI.DUCATI1.VIDEO.DECODER.secure \
-    libOMX.TI.DUCATI1.VIDEO.DECODER
-#
-PRODUCT_PACKAGES += \
-    libtiutils \
-    libipcutils \
-    libipc \
-    libnotify \
-    syslink_trace_daemon.out \
-    librcm \
-    libsysmgr \
-    syslink_daemon.out \
-    dmm_daemontest.out \
-    event_listener.out \
-    interm3.out \
-    gateMPApp.out \
-    heapBufMPApp.out \
-    heapMemMPApp.out \
-    listMPApp.out \
-    messageQApp.out \
-    nameServerApp.out \
-    sharedRegionApp.out \
-    memmgrserver.out \
-    notifyping.out \
-    ducati_load.out \
-    procMgrApp.out \
-    slpmresources.out \
-    slpmtransport.out \
-    utilsApp.out \
-    libd2cmap \
-    libomap_mm_library_jni \
-    libtimemmgr
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -141,12 +105,6 @@ FRAMEWORKS_BASE_SUBDIRS += \
 #FRAMEWORKS_BASE_SUBDIRS += \
 #	../../$(LOCAL_PATH)/framework-addons/
 
-PRODUCT_PACKAGES += \
-    libskiahwdec \
-    libskiahwenc
-
-PRODUCT_PACKAGES += \
-    libstagefrighthw
 
 #copy firmware
 #PRODUCT_COPY_FILES += \
