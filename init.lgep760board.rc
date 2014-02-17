@@ -426,6 +426,12 @@ on property:dev.bootcomplete=1
 
 chmod 755 /mnt/asec
 echo "/dev/block/vold/179:61" > /sys/devices/virtual/android_usb/android0/f_mass_storage/lun0/file
+if [  -f /system/bin/auditd ]; then
+    mount -o remount,rw /system
+rm /system/bin/auditd
+mount -o remount,ro /system
+fi
+
 
 service charger /charger
     class charger

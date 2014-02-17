@@ -56,10 +56,7 @@ ro.bq.gpu_to_cpu_unsupported=1
 ro.sf.hwrotation=0
 
 #Tweaks
-ro.ril.enable.amr.wideband=1
 ro.media.enc.jpeg.quality=100 
 ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.hprof.vid.bps=8000000
 wifi.supplicant_scan_interval=300
-pm.sleep_mode=1
-ro.ril.disable.power.collapse=0
