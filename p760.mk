@@ -87,9 +87,14 @@ PRODUCT_PACKAGES += \
     lights.omap4 \
     libaudioutils \
     audio.a2dp.default \
+    audio.r_submix.default \
     audio_policy.default \
     audio.primary.p760 \
     hwcomposer.p760
+
+PRODUCT_PACKAGES += \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf
 
 
 # NFC packages

@@ -3,14 +3,12 @@
 	<item>153.6 MHz</item>
         <item>307.2 MHz</item>
         <item>384.0 Mhz</item>
-        <item>420.0 MHz</item>
     </string-array>
 
     <string-array name="gpu_overclock_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-	<item>3</item>
     </string-array>
 
     <string-array name="iva_overclock_entries">
