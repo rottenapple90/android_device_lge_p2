@@ -1,10 +1,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/lge/p760/p760-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/p2/p2-vendor.mk)
 
 $(call inherit-product, device/common/gps/gps_eu.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/lge/p760/overlay
+DEVICE_PACKAGE_OVERLAYS += device/lge/p2/overlay
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
@@ -14,10 +14,10 @@ PRODUCT_COPY_FILES += \
 
 ## Scripts and confs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.p760.usb.rc:root/init.p760.usb.rc \
-    $(LOCAL_PATH)/init.lgep760board.rc:root/init.lgep760board.rc \
-    $(LOCAL_PATH)/ueventd.lgep760board.rc:root/ueventd.lgep760board.rc \
-    $(LOCAL_PATH)/fstab.u2:root/fstab.lgep760board
+    $(LOCAL_PATH)/init.p2.usb.rc:root/init.p2.usb.rc \
+    $(LOCAL_PATH)/init.p2.rc:root/init.p2.rc \
+    $(LOCAL_PATH)/ueventd.p2.rc:root/ueventd.p2.rc \
+    $(LOCAL_PATH)/fstab.p2:root/fstab.p2
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
@@ -89,8 +89,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
     audio_policy.default \
-    audio.primary.p760 \
-    hwcomposer.p760
+    audio.primary.p2 \
+    hwcomposer.p2
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
@@ -121,7 +121,7 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_p760
-PRODUCT_DEVICE := p760
-PRODUCT_MODEL := LG-P760
+PRODUCT_NAME := full_p2
+PRODUCT_DEVICE := p2
+PRODUCT_MODEL := LG-SU540
 PRODUCT_MANUFACTURER := LGE
