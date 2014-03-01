@@ -239,7 +239,7 @@ struct pcm_config pcm_config_mm_ul = {
 
 struct pcm_config pcm_config_vx = {
     .channels = 1,
-    .rate = VX_WB_SAMPLING_RATE,
+    .rate = VX_NB_SAMPLING_RATE,
     .period_size = 160,
     .period_count = 2,
     .format = PCM_FORMAT_S16_LE,
