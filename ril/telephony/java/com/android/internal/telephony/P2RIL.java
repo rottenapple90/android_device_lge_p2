@@ -34,7 +34,7 @@ import android.telephony.TelephonyManager;
 
 import android.util.Log;
 
-public class U2RIL extends RIL implements CommandsInterface {
+public class P2RIL extends RIL implements CommandsInterface {
 
     private AudioManager audioManager;
     protected HandlerThread mPathThread;
@@ -42,7 +42,7 @@ public class U2RIL extends RIL implements CommandsInterface {
 
     private int mCallPath = -1;
 
-    public U2RIL(Context context, int networkMode, int cdmaSubscription) {
+    public P2RIL(Context context, int networkMode, int cdmaSubscription) {
         super(context, networkMode, cdmaSubscription);
         PhoneStateListener mPhoneStateListener = new PhoneStateListener() {
             @Override

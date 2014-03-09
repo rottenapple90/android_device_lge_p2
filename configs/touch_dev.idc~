@@ -13,9 +13,16 @@
 # limitations under the License.
 
 #
-# Input Device Configuration File for the p940 touchscreen
+# Emulator keyboard configuration file #1.
 #
 
-# Basic Parameters
 touch.deviceType = touchScreen
 touch.orientationAware = 1
+
+keyboard.layout = touch_dev
+keyboard.characterMap = touch_dev
+keyboard.orientationAware = 1
+keyboard.builtIn = 0
+
+cursor.mode = navigation
+cursor.orientationAware = 1

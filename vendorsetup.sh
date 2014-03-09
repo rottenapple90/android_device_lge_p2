@@ -1,4 +1,5 @@
-# Copyright (C) 2010 The Android Open Source Project
+#
+# Copyright (C) 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,11 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-#
-# Input Device Configuration File for the p940 touchscreen
 #
 
-# Basic Parameters
-touch.deviceType = touchScreen
-touch.orientationAware = 1
+# This file is executed by build/envsetup.sh, and can use anything
+# defined in envsetup.sh.
+#
+# In particular, you can add lunch options with the add_lunch_combo
+# function: add_lunch_combo generic-eng
+
+add_lunch_combo cm_p2-userdebug

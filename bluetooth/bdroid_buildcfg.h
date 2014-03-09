@@ -17,6 +17,6 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "LG Optimus L9"
+#define BTM_DEF_LOCAL_NAME   "Prada 3.0"
 
 #endif

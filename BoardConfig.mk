@@ -2,7 +2,7 @@ USE_CAMERA_STUB := false
 BOARD_USES_TI_CAMERA_HAL := true
 
 # inherit from the proprietary version
--include vendor/lge/p760/BoardConfigVendor.mk
+-include vendor/lge/p2/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := omap4
@@ -29,7 +29,7 @@ FM_CHR_DEV_ST := true
 BUILD_TI_FM_APPS := true
 # Try to build the kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_p2_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/omap4-common
+TARGET_KERNEL_SOURCE := kernel/lge/omap4
 #TARGET_PREBUILT_KERNEL := device/lge/p760/kernel
 
 
